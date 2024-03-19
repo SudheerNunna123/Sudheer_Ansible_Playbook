@@ -1,11 +1,11 @@
 ---
 -name: Install Nginx
 hosts: Application_Servers
-become: yes #To run the task with sudo privilages
+become: true #To run the task with sudo privilages
 tasks:
 -name: Update package cache
 apt: 
-update_cache: yes
+update_cache: true
 when_OS_Family == 'Debian'
 -name:Install Ngnix
 apt:
@@ -17,4 +17,4 @@ when_OS_Family == 'Debian'
 service:
 name:n ginx
 state: started
-enabled: yes
+enabled: true
